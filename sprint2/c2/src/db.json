@@ -1,0 +1,89 @@
+{
+  "students": [
+    {
+      "first_name": "pankaj",
+      "last_name": "kandpal",
+      "email": "pkandpal28@gmail.com",
+      "gender": "male",
+      "age": "25",
+      "tenth_score": "90",
+      "twelth_score": "70",
+      "preferred_branch": "science",
+      "id": 1
+    },
+    {
+      "first_name": "gokul",
+      "last_name": "kandpal",
+      "email": "gmail8@gmail.com",
+      "gender": "male",
+      "age": "22",
+      "tenth_score": "60",
+      "twelth_score": "90",
+      "preferred_branch": "sports",
+      "id": 2
+    },
+    {
+      "first_name": "pankaj",
+      "last_name": "kandpal",
+      "email": "pkandpal28@gmail.com",
+      "gender": "male",
+      "age": "1",
+      "tenth_score": "10",
+      "twelth_score": "1",
+      "id": 3
+    },
+    {
+      "first_name": "pan",
+      "last_name": "pk",
+      "email": "pkandpal28@gmail.com",
+      "gender": "male",
+      "age": "10",
+      "tenth_score": "11",
+      "twelth_score": "10",
+      "id": 4
+    },
+    {
+      "first_name": "jolly-meringue-7e2a04",
+      "last_name": "rgdf",
+      "email": "4353@",
+      "gender": "male",
+      "age": "5",
+      "tenth_score": "43",
+      "twelth_score": "3",
+      "id": 5
+    },
+    {
+      "first_name": "pk",
+      "last_name": "pk",
+      "email": "pk@",
+      "gender": "female",
+      "age": "33",
+      "tenth_score": "70",
+      "twelth_score": "50",
+      "preferred_branch": "science",
+      "id": 7
+    },
+    {
+      "first_name": "pk",
+      "last_name": "pk",
+      "email": "pk@",
+      "gender": "female",
+      "age": "33",
+      "tenth_score": "70",
+      "twelth_score": "50",
+      "preferred_branch": "science",
+      "id": 8
+    },
+    {
+      "first_name": "pk",
+      "last_name": "pk",
+      "email": "pk@",
+      "gender": "female",
+      "age": "33",
+      "tenth_score": "70",
+      "twelth_score": "50",
+      "preferred_branch": "science",
+      "id": 9
+    }
+  ]
+}

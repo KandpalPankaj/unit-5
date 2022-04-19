@@ -1,0 +1,51 @@
+{
+  "houses": [
+    {
+      "name": "shanti niwas",
+      "owner": "pankaj",
+      "Address": "pune",
+      "areaCode": "75",
+      "rent": "2000",
+      "preferred": "Bachelors",
+      "id": 1
+    },
+    {
+      "name": "pg",
+      "owner": "rupam",
+      "Address": "delhi",
+      "areaCode": "74",
+      "rent": "2000",
+      "preferred": "Bachelors",
+      "id": 2
+    },
+    {
+      "name": "pankaj niwas",
+      "owner": "pankaj k",
+      "Address": "thal",
+      "areaCode": "1242",
+      "rent": "123",
+      "preferred": "Married",
+      "id": 3
+    },
+    {
+      "name": "shubham niwas",
+      "owner": "shubham",
+      "Address": "banaras",
+      "code": "",
+      "rent": "2500",
+      "preferred": "Married",
+      "areaCode": "1234",
+      "id": 4
+    },
+    {
+      "name": "shivani house",
+      "owner": "shivani",
+      "Address": "dehradun",
+      "code": "",
+      "rent": "202",
+      "preferred": "Married",
+      "areaCode": "2",
+      "id": 5
+    }
+  ]
+}
