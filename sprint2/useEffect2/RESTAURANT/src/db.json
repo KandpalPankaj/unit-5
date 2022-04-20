@@ -1,0 +1,44 @@
+{
+  "restaurant": [
+    {
+      "name": "hotel1",
+      "accepts_card": "true",
+      "votes": "12",
+      "reviews": "12",
+      "cost": "12",
+      "ratings": "2",
+      "image": "https://www.timeoutabudhabi.com/public/images/2019/06/02/Filipino-Dish.jpg",
+      "id": 1
+    },
+    {
+      "name": "hotel 2",
+      "accepts_card": "false",
+      "votes": "345",
+      "reviews": "34",
+      "cost": "50",
+      "ratings": "4.2",
+      "image": "https://s.inyourpocket.com/gallery/valletta/2020/01/shutterstock-402554491.jpg",
+      "id": 2
+    },
+    {
+      "name": "hotel 3",
+      "accepts_card": "false",
+      "votes": "23",
+      "reviews": "33",
+      "cost": "100",
+      "ratings": "4.4",
+      "image": "https://www.washingtonpost.com/resizer/Y8B2f3IF5ZZSZqdR-EI8wyvGDmc=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KXWS4XFKMQ5QBN7KGRHVEYJBD4.jpg",
+      "id": 3
+    },
+    {
+      "name": "hotel3",
+      "accepts_card": "true",
+      "votes": "77",
+      "reviews": "45",
+      "cost": "100",
+      "ratings": "1",
+      "image": "https://th.bing.com/th/id/OIP.lEa60MoPEz7kNWZQBc_a3wHaEo?pid=ImgDet&rs=1",
+      "id": 4
+    }
+  ]
+}

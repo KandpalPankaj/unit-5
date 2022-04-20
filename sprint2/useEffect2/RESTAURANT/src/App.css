@@ -1,0 +1,56 @@
+/* .App {
+  font-size: 14px;
+} */
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin-top: 10px;
+}
+.box{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 20px;
+  width: 1250px;
+  margin: auto;
+  margin-top: 20px;
+}
+.name{
+  font-weight: bold;
+  font-size: 18px;
+}
+.ratings{
+  background-color: yellowgreen;
+  width: 28px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 45px;
+}
+.right{
+  text-align: right;
+  margin-right: 5px;
+  font-size: 14px;
+}
+.Order{
+  border: 1px solid rgb(156, 150, 150);
+}
+.Order>div{
+  color: rgb(88, 129, 6);
+  background-color: rgb(212, 240, 159);
+  width: 110px;
+  margin-left:290px;
+  text-align: right;
+}
+img{
+  width: 100%;
+}
+.img{
+  width: 100px;
+  margin-left: 5px;
+}
