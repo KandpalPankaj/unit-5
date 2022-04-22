@@ -6,7 +6,7 @@ export const Timer = () => {
   const [hour, setHour] = useState("00");
   const [buttonChange, setButtonChange] = useState(true);
   const [click, setClick] = useState(0);
-  const [show,setShow] = useState(true);
+  const [show, setShow] = useState(true);
   const counterRef = useRef(null);
 
   useEffect(() => {
@@ -59,96 +59,95 @@ export const Timer = () => {
   const pause = () => {
     clearInterval(counterRef.current);
   };
-  const handleChange=(el)=>{
-    if(el.target.id==="sec")
-    {
-      if(el.target.value>59)
-      {
-        setSec(59)
+  const handleChange = (el) => {
+    if (el.target.id === "sec") {
+      if (el.target.value > 59) {
+        setSec(59);
+      } else if (el.target.value < 0) {
+        setSec("00");
+      } else {
+        setSec(el.target.value);
       }
-      else if(el.target.value<0)
-      {
-        setSec("00")
-      }
-      else{
-      setSec(el.target.value)}
     }
-    if(el.target.id==="min")
-    {
-      if(el.target.value>59)
-      {
-        setMin(59)
+    if (el.target.id === "min") {
+      if (el.target.value > 59) {
+        setMin(59);
+      } else if (el.target.value < 0) {
+        setMin("00");
+      } else {
+        setMin(el.target.value);
       }
-      else if(el.target.value<0)
-      {
-        setMin("00")
-      }
-      else{
-      setMin(el.target.value)}
     }
-    if(el.target.id==="hour")
-    {
-      if(el.target.value>23)
-      {
-        setHour(23)
+    if (el.target.id === "hour") {
+      if (el.target.value > 23) {
+        setHour(23);
+      } else if (el.target.value < 0) {
+        setHour("00");
+      } else {
+        setHour(el.target.value);
       }
-      else if(el.target.value<0)
-      {
-        setHour("00")
-      }
-      else{
-      setHour(el.target.value)}
     }
-  }
+  };
   return (
     <div>
-      
-      {show? null:<form>
-        <h1>Edit Timer</h1>
-        <span>Hrs-</span>
-      <input
-          type="number"
-          onChange={handleChange}
-          placeholder="HH"
-          id="hour"
-        />
-        <span> : Mins-</span>
-        <input
-          type="number"
-          onChange={handleChange}
-          placeholder="MM"
-          id="min"
-        />
-        <span> : Secs-</span>
-        <input
-          type="number"
-          onChange={handleChange}
-          placeholder="SS"
-          id="sec"
-        />
-      </form>}
-     
-      {show? <div>
-        <h1>Timer</h1>
-      <div className="stopwatch">
-        {hour}:{min}:{sec}
-      </div>
-      <button onClick={start} className="start">{buttonChange ? "start" : "Pause"}</button>
+      {show ? null : (
+        <form>
+          <h1>Edit Timer</h1>
+          <span>Hrs-</span>
+          <input
+            type="number"
+            onChange={handleChange}
+            placeholder="HH"
+            id="hour"
+          />
+          <span> : Mins-</span>
+          <input
+            type="number"
+            onChange={handleChange}
+            placeholder="MM"
+            id="min"
+          />
+          <span> : Secs-</span>
+          <input
+            type="number"
+            onChange={handleChange}
+            placeholder="SS"
+            id="sec"
+          />
+        </form>
+      )}
+
+      {show ? (
+        <div>
+          <h1>Timer</h1>
+          <div className="stopwatch">
+            {hour}:{min}:{sec}
+          </div>
+          <button onClick={start} className="start">
+            {buttonChange ? "start" : "Pause"}
+          </button>
+          <button
+            className="reset"
+            onClick={() => {
+              clearInterval(counterRef.current);
+              setHour("00");
+              setMin("00");
+              setSec("59");
+              buttonChange(true);
+            }}
+          >
+            Reset
+          </button>{" "}
+        </div>
+      ) : null}
       <button
-      className="reset"
+        className="edit"
         onClick={() => {
-          clearInterval(counterRef.current);
-          setHour("00");
-          setMin("00");
-          setSec("59");
-          buttonChange(true)
+          setShow(!show);
         }}
       >
-        Reset
-      </button> </div>:null}
-      <button className="edit" onClick={()=>{
-        setShow(!show);
-      }}>{show?"Edit":"Done"}</button>
+        {show ? "Edit" : "Done"}
+      </button>
     </div>
   );
 };
