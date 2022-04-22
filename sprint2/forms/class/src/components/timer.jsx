@@ -66,6 +66,10 @@ export const Timer = () => {
       {
         setSec(59)
       }
+      else if(el.target.value<0)
+      {
+        setSec("00")
+      }
       else{
       setSec(el.target.value)}
     }
@@ -75,6 +79,10 @@ export const Timer = () => {
       {
         setMin(59)
       }
+      else if(el.target.value<0)
+      {
+        setMin("00")
+      }
       else{
       setMin(el.target.value)}
     }
@@ -83,6 +91,10 @@ export const Timer = () => {
       if(el.target.value>23)
       {
         setHour(23)
+      }
+      else if(el.target.value<0)
+      {
+        setHour("00")
       }
       else{
       setHour(el.target.value)}

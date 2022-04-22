@@ -1,49 +1,73 @@
 .App {
   text-align: center;
-  
+  height: 655px;
+  background-color: rgb(207, 207, 142);
 }
-.stopwatch{
+.DarkApp {
+  color: white;
+  text-align: center;
+  height: 655px;
+  background-color: #1f2327;
+}
+.stopwatch {
   font-size: 70px;
 }
-.link{
+.link {
   font-size: 20px;
-  margin: 10px;
+  margin-right: 250px;
   text-decoration: none;
   color: black;
 }
-.link:active{
+.Darklink {
+  font-size: 20px;
+  margin-right: 250px;
+  text-decoration: none;
+  color: white;
+}
+.link:active {
   color: red;
 }
-.link:focus{
-  border-bottom:4px solid teal ;
+.link:focus {
+  border-bottom: 4px solid teal;
 }
-.reset,.pause,.start{
-  border-radius:50%;
-  width:100px ;
+.Darklink:active {
+  color: red;
+}
+.Darklink:focus {
+  border-bottom: 4px solid teal;
+}
+.reset,
+.pause,
+.start {
+  border-radius: 50%;
+  width: 100px;
   height: 100px;
   margin: 10px 10px 20px 10px;
   border: none;
   font-size: 20px;
-  
 }
-.start:focus,.reset:focus,.pause:focus{
+.start:focus,
+.reset:focus,
+.pause:focus {
   background-color: rgb(64, 160, 160);
 }
-.start:active,.reset:active,.pause:active{
+.start:active,
+.reset:active,
+.pause:active {
   background-color: rgb(1, 105, 105);
 }
-input{
+input {
   width: 47px;
   height: 40px;
   text-align: center;
   font-size: 20px;
   margin-top: 20px;
 }
-span{
+span {
   font-size: 27px;
 }
 
-.edit{
+.edit {
   width: 90px;
   font-size: 20px;
   background-color: teal;
@@ -53,6 +77,20 @@ span{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body{
-  background-color: rgb(207, 207, 142);
+
+.flex {
+  display: flex;
+  width: 850px;
+  justify-content: space-between;
+  margin-left: 33%;
+}
+.navbar {
+  background-color: rgb(212, 212, 105);
+  margin-bottom: -10px;
+  border: 1px solid rgb(204, 204, 112);
+}
+.Darknavbar {
+  background-color: black;
+  margin-bottom: -10px;
+  border: 1px solid black;
 }
