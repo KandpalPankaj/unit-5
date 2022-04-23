@@ -1,0 +1,50 @@
+{
+  "clothings": [
+    {
+      "id": 1,
+      "name": "jeans",
+      "brand": "puma",
+      "price": 1000,
+      "image": "https://jerone.com/images/12704-Blue-Ripped-Jeans-L32-Jerone-1596624467-7264.jpg"
+    },
+    {
+      "id": 2,
+      "name": "sweater",
+      "brand": "Zara",
+      "price": 999,
+      "image": "https://th.bing.com/th/id/OIP.KHOg3qEAJ4hp1ijgL8M7uAHaJ4?pid=ImgDet&rs=1"
+    }
+  ],
+  "electronics": [
+    {
+      "id": 1,
+      "name": "Iphone",
+      "brand": "Apple",
+      "price": "one kidney",
+      "image": "https://cdn11.bigcommerce.com/s-p8i5esyy64/images/stencil/960w/products/1952/7979/iphone-13-blue-select-2021__08080.1635344242.png?c=2"
+    },
+    {
+      "id": 2,
+      "name": "headphone",
+      "brand": "Boat",
+      "price": 999,
+      "image": "https://th.bing.com/th/id/OIP.5KT7KY52dcOh3-H30lXn5wHaH9?pid=ImgDet&rs=1"
+    }
+  ],
+  "shoes": [
+    {
+      "id": 1,
+      "name": "sports shoes",
+      "brand": "lotto",
+      "price": "499",
+      "image": "https://th.bing.com/th/id/R.eaabdadbbfe28feddc6a0f6ad03c6b0e?rik=NblflNROk8uNNw&riu=http%3a%2f%2fwww.tennisnuts.com%2fimages%2fproduct%2ffull%2fS1444.jpg&ehk=co7Bpvx1EiOyK4CyXIG4%2fNL6Q0OE1rgUjq9DDiesEK0%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 2,
+      "name": "formal",
+      "brand": "Bata",
+      "price": 999,
+      "image": "https://th.bing.com/th/id/OIP.enVvkfRMDRy82qdSMjZ1CwHaHa?pid=ImgDet&rs=1"
+    }
+  ]
+}

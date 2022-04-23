@@ -8,8 +8,8 @@ export const Navbar = () => {
       to: "/clothings",
     },
     {
-      title: "Paintings",
-      to: "/paintings",
+      title: "Shoes",
+      to: "/shoes",
     },
     { title: "Electronics", to: "/electronics" },
   ];
@@ -22,6 +22,7 @@ export const Navbar = () => {
           {e.title}
         </Link>
       ))}
+      Cart
     </div>
   );
 };
