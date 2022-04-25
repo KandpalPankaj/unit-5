@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {useParams} from "react-router-dom"
 export const EmployeeList = () => {
   const { list } = useContext(EmployeeContext);
-  const {id} = useParams()
+  
   return (
     <div className="list_container">
       {/* On clicking this card anywhere, user goes to user details */}
