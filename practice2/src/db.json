@@ -1,0 +1,27 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title":"Book1",
+      "imageUrl":"",
+      "description":"Book1 des",
+      "reviews":["review1","review2"],
+      "author":"pankaj",
+      "price":"200",
+      "section":"Mystery",
+      "isbnNumber":"12"
+    },
+    {
+      "id": 2,
+      "title":"Book2",
+      "imageUrl":"",
+      "description":"Book2 des",
+      "reviews":["review1","review2"],
+      "author":"pk",
+      "price":"800",
+      "section":"mythology",
+      "isbnNumber":"1100"
+    }
+  ]
+  
+}

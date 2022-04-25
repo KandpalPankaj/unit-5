@@ -6,7 +6,7 @@ export const Timer = () => {
   useEffect(() => {
     let id = setInterval(() => {
       setTimer((timer) => {
-        console.log(timer);
+        
         if (timer === 10) {
           clearInterval(id);
           return 0;
