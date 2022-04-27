@@ -7,7 +7,7 @@ export const Toggle = () => {
 
   return (
     <div id="toggleDiv">
-      <div id="text">{toggle ? "Dark Mode" : "Light Mode"}</div>
+      <div id="text">{toggle ? "Light Mode" : "Dark Mode"}</div>
       <div
         className="switch-container"
         style={

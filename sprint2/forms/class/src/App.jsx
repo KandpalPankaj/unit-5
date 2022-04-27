@@ -15,7 +15,7 @@ const {toggle} = useContext(ToggleContext);
     <div className={toggle? "DarkApp" :"App"}>
       <div  className={toggle? "Darknavbar" :"navbar"}>
       <Navbar ></Navbar>
-      <h3>{dateTime}</h3>
+      <h3 id="time">{dateTime}</h3>
       </div>
       <hr />
       

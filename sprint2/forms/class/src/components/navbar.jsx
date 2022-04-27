@@ -11,12 +11,13 @@ export const Navbar =()=>{
     const {toggle} = useContext(ToggleContext);
     return(
         <div className="flex">
-            <div>
+            <div className="left">
             {nav.map((e,i)=>(
                 <Link key={i} to={e.to} className={toggle? "Darklink" : "link"}>{e.title}</Link>
             ))}
+            
             </div>
-            <div>
+            <div className="right">
                 <Toggle/>
             </div>
         </div>

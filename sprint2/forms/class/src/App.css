@@ -1,12 +1,16 @@
 .App {
   text-align: center;
+  background-color: 	#aee5fa;
+  width: 100%;
   height: 655px;
-  background-color: rgb(207, 207, 142);
+  
 }
+
 .DarkApp {
   color: white;
   text-align: center;
   height: 655px;
+  width: 100%;
   background-color: #1f2327;
 }
 .stopwatch {
@@ -14,15 +18,19 @@
 }
 .link {
   font-size: 20px;
-  margin-right: 250px;
+  /* margin-right: 5%; */
+  margin-left: 20%;
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 .Darklink {
   font-size: 20px;
-  margin-right: 250px;
-  text-decoration: none;
+  margin-right: 5%;
+  margin-left: 20%;
+    text-decoration: none;
   color: white;
+  font-weight: bold;
 }
 .link:active {
   color: red;
@@ -80,17 +88,94 @@ span {
 
 .flex {
   display: flex;
-  width: 850px;
-  justify-content: space-between;
-  margin-left: 33%;
+}
+.left{
+  flex:80%;
+}
+.right{
+  flex: 15%;
 }
 .navbar {
-  background-color: rgb(212, 212, 105);
+  background-color: #a0d4f8;
   margin-bottom: -10px;
-  border: 1px solid rgb(204, 204, 112);
+  border: 1px solid #a0d4f8;
+  
 }
 .Darknavbar {
   background-color: black;
   margin-bottom: -10px;
   border: 1px solid black;
+}
+
+@media (max-width: 720px){
+  .flex {
+    display: flex;
+    /* width: 100%; */
+  }
+  .left{
+    flex:75%;
+  }
+  .right{
+    flex: 25%;
+  }
+}
+@media (max-width: 530px){
+
+  .stopwatch {
+    font-size: 50px;
+  }
+  .start {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 20px 10px;
+    border: none;
+    font-size: 20px;
+  }
+  input {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  span {
+    font-size: 20px;
+  }
+  .edit {
+    width: 90px;
+    font-size: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #time{
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .link {
+    font-size: 18px;
+    /* margin-right: 5%; */
+    margin-left: 16%;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  .Darklink {
+    font-size: 18px;
+    /* margin-right: 5%; */
+    margin-left:15%;
+      text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  .left{
+    flex:60%;
+  }
+  .right{
+    flex: 20%;
+  }
 }
