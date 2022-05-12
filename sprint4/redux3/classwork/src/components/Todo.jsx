@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addTodo } from "../Redux/todo/action";
+import { addTodo,getTodos } from "../Redux/todo/action";
 
 
 export const Todo = ()=>{
@@ -24,18 +24,18 @@ const handleAdd=()=>{
             "content-type": "application/json"
         }
 
-    }).then(()=>{setText("")}).then(getdata)
+    }).then(()=>{setText("")}).then(()=>{dispatch(getTodos())})
 }
 
 useEffect(()=>{
-    getdata()
+    dispatch(getTodos())
 },[])
 
-const  getdata = async ()=>{
-    let res= await fetch("http://localhost:8080/todos");
-    let data = await res.json();
-    dispatch(addTodo(data))
-}
+// const  getdata = async ()=>{
+//     let res= await fetch("http://localhost:8080/todos");
+//     let data = await res.json();
+//     dispatch(addTodo(data))
+// }
     return (
     <div>
         <input type="text" onChange={handleChange} value={text}/>
