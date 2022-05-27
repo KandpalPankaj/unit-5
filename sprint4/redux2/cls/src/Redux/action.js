@@ -12,3 +12,9 @@ export const addTodo = (data) => {
     payload: data,
   };
 };
+
+// export const getTodos = ()=>async(dispatch)=>{
+//   let res = await fetch("http://localhost:8080/todos")
+//     let data = await res.json();
+//     dispatch(addTodo(data))
+// }

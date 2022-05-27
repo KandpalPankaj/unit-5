@@ -15,7 +15,7 @@ export const Timer = () => {
         return timer + 1;
       });
     }, 1000);
-
+console.log("mount")
     return () => {
       clearInterval(id);
     };

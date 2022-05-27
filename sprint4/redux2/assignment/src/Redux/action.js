@@ -8,6 +8,6 @@ export const addTodo = (data) => {
   };
 };
 export const tog = {
-  type: Toggle,
+  type: TOGGLE,
   payload : true
 }

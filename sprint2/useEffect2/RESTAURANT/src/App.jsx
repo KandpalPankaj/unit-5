@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Form } from "./components/form";
 import { Res } from "./components/show";
 import "./App.css";
+import { Counter } from "./components/counter";
 
 function App() {
   const [rate, setRate] = useState(0);
   const [type, setType] = useState("")
   const [num,setNum] = useState(0)
+  const [show,setShow]= useState(false)
   const handleButton = (el)=>{
     setRate(el.target.id)
     setNum(0)
@@ -39,7 +41,8 @@ function App() {
         <button onClick={handleAll}> all</button>
       </div>
       <Res rate={rate} type={type} num={num}/>
-      
+      {show?<Counter></Counter>:null}
+      <button onClick={()=>(setShow(!show))}>show</button>
     </div>
   );
 }

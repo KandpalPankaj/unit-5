@@ -3,7 +3,7 @@ import { Timer } from "./components/timer";
 import "./App.css";
 
 function App() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <div className="App">
