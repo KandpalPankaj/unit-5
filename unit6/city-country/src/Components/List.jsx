@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-
+import axios from "axios";
 import * as React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -22,19 +22,14 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 export const List = () => {
   const [data, setData] = useState([]);
-  const [CopyData,setCopydata] = useState([])
+  const [CopyData, setCopydata] = useState([]);
   const [sorting, setSort] = useState("");
-  const getList = async () => {
-    try {
-      let res = await fetch("http://localhost:8080/city");
-      let data = await res.json();
-      setData(data);
-      setCopydata(data);
-    } catch (err) {
-      console.log(err);
-    }
+  const getList = () => {
+    axios.get("http://localhost:8080/city").then(function (response) {
+      setData(response.data);
+      setCopydata(response.data);
+    });
   };
-
   useEffect(() => {
     getList();
   }, []);
@@ -46,26 +41,36 @@ export const List = () => {
   } else if (sorting === "Decending") {
     CopyData.sort((a, b) => b.population - a.population);
   }
-  const handleFilter = (e)=>{
+  const handleFilter = (e) => {
     // console.log(e.target.value)
     let len = e.target.value.length;
     // console.log(len)
-    let filteredData = data.filter((el)=>{
-      let name ="";
-      for(let i=0;i<len;i++)
-      {
-          name+=el.country[i];
+    let filteredData = data.filter((el) => {
+      let name = "";
+      for (let i = 0; i < len; i++) {
+        name += el.country[i];
       }
-      if(name.toLowerCase()===e.target.value.toLowerCase()) return el;
-    })
-    
+      if (name.toLowerCase() === e.target.value.toLowerCase()) return el;
+    });
+
     setCopydata(filteredData);
-  }
+  };
+ 
   return (
     <div>
-      <Link to="/add-country" style={{textDecoration:"none",marginRight:"20px"}}><Button variant="contained">Add new Country</Button></Link>
-      <Link to="/add-city" style={{textDecoration:"none",marginRight:"20px"}}><Button variant="contained">Add new City</Button></Link>
-      <Box sx={{width: "200px" }}>
+      <Link
+        to="/add-country"
+        style={{ textDecoration: "none", marginRight: "20px" }}
+      >
+        <Button variant="contained">Add new Country</Button>
+      </Link>
+      <Link
+        to="/add-city"
+        style={{ textDecoration: "none", marginRight: "20px" }}
+      >
+        <Button variant="contained">Add new City</Button>
+      </Link>
+      <Box sx={{ width: "200px" }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Population</InputLabel>
           <Select
@@ -88,7 +93,12 @@ export const List = () => {
         noValidate
         autoComplete="off"
       >
-        <TextField id="outlined-basic" label="Search Country" variant="outlined" onChange={handleFilter}/>
+        <TextField
+          id="outlined-basic"
+          label="Search Country"
+          variant="outlined"
+          onChange={handleFilter}
+        />
       </Box>
 
       <TableContainer component={Paper}>
@@ -116,7 +126,12 @@ export const List = () => {
                   </Button>
                 </TableCell>
                 <TableCell>
-                  <Button variant="outlined" startIcon={<DeleteIcon />}>
+                  <Button variant="outlined" startIcon={<DeleteIcon />} onClick={()=>(
+                    
+                    axios.delete(`http://localhost:8080/city/${e.id}`).then(
+                      getList()
+                    )
+                  )}>
                     DELETE
                   </Button>
                 </TableCell>
