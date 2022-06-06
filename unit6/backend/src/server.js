@@ -8,10 +8,10 @@ app.use(cors())
 
 app.use('/product',ProductController)
 
-app.listen(5000, async()=>{
+app.listen(8080, async()=>{
     try {
         await connect()
-        console.log('Pankaj listening on port 5000')
+        console.log('Pankaj listening on port 8080')
     } catch (err) {
         console.log(err)
     }
