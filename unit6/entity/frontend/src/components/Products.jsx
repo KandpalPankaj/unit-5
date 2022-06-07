@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 // import "./product.css"
 
 export const Product = () => {
-  // const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [data, setdata] = useState([]);
   const [brand, setbrand] = useState(searchParams.get("brand") || []);
   const [color, setcolor] = useState(searchParams.get("color") || []);
@@ -23,7 +23,7 @@ export const Product = () => {
   const fetchProduct = async () => {
     try {
       let res = await fetch(
-        // `http://localhost:3008/product?color=${color}&name=${brand}&type=${cate}&sort=${sort}&page=${next}`
+        `http://localhost:8080/product?color=${color}&name=${brand}&type=${cate}&sort=${sort}&page=${next}`
       );
       let result = await res.json();
       setdata(result.product);
