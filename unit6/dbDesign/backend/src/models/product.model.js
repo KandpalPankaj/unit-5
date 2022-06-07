@@ -10,7 +10,6 @@ const productSchema = new mongoose.Schema({
         ref:"category",
         required:true
     }]
-
 })
 
 module.exports = mongoose.model("product", productSchema)

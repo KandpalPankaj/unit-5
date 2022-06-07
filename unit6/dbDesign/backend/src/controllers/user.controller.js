@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../models/user.model");
 const router = express.Router();
 
+
 router.post("/create", async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -27,12 +28,28 @@ router.get("/:id", async (req, res) => {
     return res.status(500).send(error);
   }
 });
+router.get("/:id/addresses", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).lean().exec();
+    return res.status(201).send(user.address);
+  } catch (err) {
+    return res.status(500).send(error);
+  }
+});
 router.patch("/:id/edit", async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(req.params.id,req.body).lean().exec();
+    const user = await User.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec();
     return res.status(201).send(user);
   } catch (err) {
     return res.status(500).send(error);
   }
 })
+// router.patch(":id/addresses/create", async (req, res) => {
+//   try {
+//     const user = await User.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec();
+//     return res.status(201).send(user);
+//   } catch (err) {
+//     return res.status(500).send(error);
+//   }
+// });
 module.exports = router;
