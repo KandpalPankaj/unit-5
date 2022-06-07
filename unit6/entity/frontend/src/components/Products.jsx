@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-// import "./product.css"
+import "./Product.css"
 
 export const Product = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setdata] = useState([]);
-  const [brand, setbrand] = useState(searchParams.get("brand") || []);
   const [color, setcolor] = useState(searchParams.get("color") || []);
   const [cate, setcate] = useState(searchParams.get("cate") || []);
   const [sort, setsort] = useState("sort_acc");
@@ -14,42 +13,32 @@ export const Product = () => {
 
   useEffect(() => {
     fetchProduct();
-  }, [color, cate, brand, sort, next]);
+  }, [color, cate,  sort, next]);
   useEffect(() => {
-    setSearchParams({ brand, color, cate });
-  }, [brand, color, cate]);
+    setSearchParams({ color, cate });
+  }, [ color, cate]);
 
-  console.log(cate, "brand");
+  
   const fetchProduct = async () => {
     try {
       let res = await fetch(
-        `http://localhost:8080/product?color=${color}&name=${brand}&type=${cate}&sort=${sort}&page=${next}`
+        `http://localhost:8080/product?color=${color}&type=${cate}&sort=${sort}&page=${next}`
       );
       let result = await res.json();
       setdata(result.product);
       setpage(result.pagecount);
 
-      // setpage(result.pagecount);
+   
     } catch (error) {
       console.log(error.message);
     }
   };
-  console.log(page, "page");
   const handlebrand = (e, value) => {
     setnext(1);
-    if (value == "brand") {
-      if (e.target.checked) {
-        setbrand([...brand, e.target.value]);
-      } else {
-        console.log(e.target.value);
-        const result = brand.filter((word) => word !== e.target.value);
-        setbrand(result);
-      }
-    } else if (value == "color") {
+    if (value == "color") {
       if (e.target.checked) {
         setcolor([...color, e.target.value]);
       } else {
-        console.log(e.target.value);
         const result = color.filter((word) => word !== e.target.value);
         setcolor(result);
       }
@@ -57,13 +46,13 @@ export const Product = () => {
       if (e.target.checked) {
         setcate([...cate, e.target.value]);
       } else {
-        console.log(e.target.value);
+       
         const result = cate.filter((word) => word !== e.target.value);
         setcate(result);
       }
     }
   };
-  console.log(data);
+
   return (
     <div>
       <div className="Sorting">
@@ -85,114 +74,37 @@ export const Product = () => {
       <div className="mainContainer">
         <div className="filter_container">
           <div>
-            <h3>BRANDS NAME</h3>
-            <ul className="brands">
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "brand")}
-                  type="checkbox"
-                  value="Nike"
-                />{" "}
-                Nike
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "brand")}
-                  type="checkbox"
-                  value="NETPLAY"
-                />{" "}
-                NETPLAY
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "brand")}
-                  type="checkbox"
-                  value="LEVIS"
-                />{" "}
-                LEVIS
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "brand")}
-                  type="checkbox"
-                  value="Mpl Sports"
-                />{" "}
-                Mpl Sports
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "brand")}
-                  type="checkbox"
-                  value="ADIDAS"
-                />{" "}
-                ADIDAS
-              </li>
-            </ul>
-          </div>
-          <div>
             <h3>CATEGORY</h3>
             <ul className="category">
               <li>
                 <input
                   onChange={(e) => handlebrand(e, "cate")}
                   type="checkbox"
-                  value="T-Shirt"
+                  value="Shirt"
                 />{" "}
-                T-Shirt
+                Shirt
               </li>
               <li>
                 <input
                   onChange={(e) => handlebrand(e, "cate")}
                   type="checkbox"
-                  value="Jacket"
+                  value="Jeans"
                 />{" "}
-                Jacket
+                Jeans
               </li>
               <li>
                 <input
                   onChange={(e) => handlebrand(e, "cate")}
                   type="checkbox"
-                  value="pant"
+                  value="Shoes"
                 />{" "}
-                pant
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "cate")}
-                  type="checkbox"
-                  value="Shorts"
-                />{" "}
-                Shorts
+                Shoes
               </li>
             </ul>
           </div>
           <div>
             <h3>COLORS</h3>
             <ul className="colors">
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "color")}
-                  type="checkbox"
-                  value="Blue"
-                />{" "}
-                Blue
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "color")}
-                  type="checkbox"
-                  value="Brown"
-                />{" "}
-                Brown
-              </li>
-              <li>
-                <input
-                  onChange={(e) => handlebrand(e, "color")}
-                  type="checkbox"
-                  value="Green"
-                />{" "}
-                Green
-              </li>
               <li>
                 <input
                   onChange={(e) => handlebrand(e, "color")}
@@ -216,40 +128,37 @@ export const Product = () => {
           {data.map((e) => {
             return (
               <div key={e._id} className="product-card">
-                <img src={e.image.img1} alt="" />
+                <img src={e.image} alt="" />
                 <p>{e.name}</p>
-                <p>{e.details}</p>
                 <div>
                   <p>Rs.{e.discount_price}</p>
                   <p>Rs.{e.main_price}</p>
-                  <p>({e.discount}.% off)</p>
                 </div>
-                <p>Offer Price : Rs.{e.offer_price}</p>
               </div>
             );
           })}
         </div>
       </div>
       <div className="pagecount">
-        <p
+        <button
           onClick={() => {
             if (next > 1) {
               setnext(next - 1);
             }
           }}
         >
-          &#60; &#60; Privous
-        </p>{" "}
+          &#60; Previous
+        </button>{" "}
         Page no : {next}{" "}
-        <p
+        <button
           onClick={() => {
             if (next < page) {
               setnext(next + 1);
             }
           }}
         >
-          Next &#62;&#62;
-        </p>
+          Next &#62;;
+        </button>
       </div>
     </div>
   );
