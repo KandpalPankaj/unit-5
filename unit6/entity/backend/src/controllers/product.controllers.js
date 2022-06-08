@@ -5,9 +5,9 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const product = await Product.create(req.body);
-    return res.status(201).send(product);
-  } catch (error) {
-    return res.status(500).send(error);
+    return res.status(200).send(product);
+  } catch (err) {
+    return res.status(500).send(err);
   }
 });
 
@@ -52,12 +52,12 @@ router.get("/", async (req, res) => {
       .limit(item)
       .lean()
       .exec();
-    let pagecount = await Product.find(filter).countDocuments();
+    let p = await Product.find(filter).countDocuments();
 
-    pagecount = Math.ceil(pagecount / item);
-    res.status(201).send({ product, pagecount });
-  } catch (error) {
-    res.status(500).send({ message: error.message });
+    p = Math.ceil(p / item);
+    res.status(200).send({ product, p });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
     console.log("nhi");
   }
 });
@@ -65,7 +65,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const user = await Product.findById(req.params.id).lean().exec();
-    return res.send(user);
+    return res.status(200).send(user);
   } catch (err) {
     return res.status(500).send(err.message);
   }
