@@ -1,33 +1,31 @@
 const express = require("express");
-
+const Assist = require("../models/assistant.model");
 const router = express.Router();
 
-const Assist = require("../models/assistant.model");
-
-router.post("", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const assist = await Assist.create(req.body);
     return res.status(201).send(assist);
   } catch (err) {
-    return res.status(400).send({ message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 });
 
 router.get("/:id", async (req, res) => {
   try {
     const assist = await Assist.findById(req.params.id).lean().exec();
-    return res.status(200).send(assist);
+    return res.status(201).send(assist);
   } catch (err) {
-    return res.status(401).send({ message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 });
 
-router.get("", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const assist = await Assist.find().lean().exec();
-    return res.status(200).send(assist);
+    return res.status(201).send(assist);
   } catch (err) {
-    return res.status(401).send({ message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 });
 
@@ -38,9 +36,9 @@ router.patch("/:id", async (req, res) => {
     })
       .lean()
       .exec();
-    return res.status(200).send(assist);
+    return res.status(201).send(assist);
   } catch (err) {
-    return res.status(400).send({ message: err.message });
+    return res.status(500).send({ message: err.message });
   }
 });
 
