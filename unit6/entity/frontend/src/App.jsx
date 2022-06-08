@@ -3,8 +3,6 @@ import { Product } from "./components/Products";
 import "./App.css";
 
 function App() {
-  
-
   return (
     <div className="App">
       <Product />
