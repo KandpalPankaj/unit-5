@@ -51,12 +51,7 @@ class UI {
   renderData(data) {
     this.clearUI();
 
-    //get arrays of  the data returned
-    let titleArray = data.titles,
-      hrefArray = data.hrefs;
-
-    //iterate over array
-
+    let titleArray = data.titles
     titleArray.forEach((title) => {
       const card = document.createElement("div");
       card.classList.add("row");
@@ -75,9 +70,6 @@ class UI {
     });
   }
 }
-
-//instances and events//
-
 const ui = new UI();
 
 submit.addEventListener("click", (e) => {
