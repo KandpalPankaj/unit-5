@@ -5,11 +5,13 @@ const cors = require("cors");
 const userController = require("./controllers/user.controller");
 const ProductController = require("./controllers/products.controller");
 const CategoryController = require("./controllers/category.controller");
+const BrandController = require("./controllers/brand.controller");
 app.use(express.json());
 app.use(cors());
 app.use("/user", userController);
 app.use("/product", ProductController);
 app.use("/category", CategoryController);
+app.use("/brand", BrandController);
 app.listen(8080, async () => {
   try {
     await connect();
