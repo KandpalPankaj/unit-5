@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 export const AddUSer = () => {
   const [address, setAdd] = useState([]);
   const [single, setSingle] = useState({
@@ -109,7 +110,9 @@ export const AddUSer = () => {
       />
       <button onClick={add}>Add Address</button>
       <br />
-      <input type="submit" onClick={submit} />
+      <button onClick={submit}><Link to="/user">Submit</Link></button>
+    
+      
       {address.map((e, i) => (
         <div>
           <h2>Address {i + 1}:</h2>
