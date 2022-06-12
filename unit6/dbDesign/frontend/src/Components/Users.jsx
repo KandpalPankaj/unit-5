@@ -16,8 +16,9 @@ export const Users = () => {
   }
   return (
     <div>
-      {user.map((e) => (
-        <Link to={`user/${e._id}`} key={e._id}><li >{e.name}</li></Link>
+      <button><Link to="/user/create">Add new User</Link></button>
+      {user.map((e,i) => (
+        <Link to={`${e._id}`} key={e._id}><div>User {i+1} - {e.name}</div></Link>
       ))}
     </div>
   );
