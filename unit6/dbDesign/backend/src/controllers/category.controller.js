@@ -12,7 +12,10 @@ router.post("/create", async (req, res) => {
   });
   router.get("/", async (req, res) => {
     try {
-      const category = await Category.find().lean().exec();
+      const category = await Category.find()
+      .populate({path:"parentId",select:"categoryName"})
+      .populate("ancestor")
+      .lean().exec();
       return res.status(201).send(category);
     } catch (err) {
       return res.status(500).send(error);

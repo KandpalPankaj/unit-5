@@ -1,0 +1,40 @@
+.div{
+    border: 5px solid red;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+.parent{
+    display: flex;
+    position: relative;
+    border: 1px solid black;
+    height: 1000px;
+    margin-left: 100px;
+}
+#one{
+    background-color: green;
+}
+#two{
+    background-color: blue;
+}
+#three{
+    background-color: brown;
+    position: sticky;
+    top: 200px;
+    /* visibility: hidden; */
+    display: none;
+    /* bottom:1px */
+
+    /* left: 200px; */
+    /* bottom: 1px; */
+    /* right: 2px; */
+    z-index: -1;
+}
+#four{
+    background-color: violet;
+}
+#five{
+    background-color: pink;
+}

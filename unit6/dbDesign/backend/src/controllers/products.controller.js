@@ -12,10 +12,12 @@ router.post("/create", async (req, res) => {
   });
   router.get("/", async (req, res) => {
     try {
-      const product = await Product.find().lean().exec();
+      const product = await Product.find()
+      .populate("categoryId")
+      .lean().exec();
       return res.status(201).send(product);
     } catch (err) {
-      return res.status(500).send(error);
+      return res.status(500).send(err);
     }
   });
   router.get("/:id", async (req, res) => {

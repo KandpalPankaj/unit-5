@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dropdown {
+        display: none;
+        border: 1px solid;
+        transform: translate(-30px, 0);
+      }
+      .parent {
+        width: 100px;
+        margin: auto;
+      }
+      .parent:hover .dropdown {
+        display: block;
+      }
+      .slider {
+        height: 90vh;
+        width: 90%;
+        margin: 30px auto;
+        position: relative;
+        overflow: hidden;
+      }
+      #images {
+        display: inline-flex;
+        width: 100%;
+        /* border: 1px solid red; */
+       transition: 0.7s;
+      }
+      #images img {
+        /* border: 2px solid red; */
+        /* margin-right: 5px; */
+        width: 100%;
+      }
+      .indicators {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translate(-50%);
+      }
+
+      span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border: 1px solid;
+        border-radius: 50%;
+        background-color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div>Greet</div>
+      <div class="dropdown">
+        <div>hi</div>
+        <div>hello</div>
+      </div>
+    </div>
+    <div class="slider">
+      <div id="images">
+        <img
+          src="https://images.csmonitor.com/csmarchives/2010/05/0517-sci-sun.jpg?alias=standard_900x600"
+          alt=""
+        />
+
+        <img
+          src="https://cdn.naturettl.com/wp-content/uploads/2021/01/18154409/reduce-file-size-of-a-photo-3-900x600.jpg"
+          alt=""
+        />
+
+        <img
+          src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
+          alt=""
+        />
+
+        <img
+          src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
+          alt=""
+        />
+      </div>
+      <div class="indicators">
+        <span id="btn1"></span>
+        <span id="btn2"></span>
+        <span id="btn3"></span>
+        <span id="btn4"></span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var slide = document.getElementById("images");
+
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+  var btn3 = document.getElementById("btn3");
+  var btn4 = document.getElementById("btn4");
+
+  btn1.onclick = function () {
+    // console.log("btn1");
+    slide.style.transform = "translate(0%)";
+  };
+  btn2.onclick = function () {
+    slide.style.transform = "translate(-100%)";
+  };
+  btn3.onclick = function () {
+    slide.style.transform = "translate(-200%)";
+  };
+  btn4.onclick = function () {
+    slide.style.transform = "translate(-300%)";
+  };
+</script>

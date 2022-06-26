@@ -1,0 +1,156 @@
+
+  body{
+            background-color: rgb(245, 226, 232);
+        }
+        #container{
+            display:flex;
+            justify-content: space-between;
+            background-color: rgb(28, 41, 56);
+            color: white;
+            height: 50px;
+            padding:25px 0 0 20px;
+            border-radius: 5px;
+        }
+        .left{
+            width:70%;
+            color:white;
+          
+        }
+        .right{
+            display:flex;
+            justify-content: space-around;
+            color:white;
+            width:30%;
+     
+        }
+        button{
+          padding:10px;
+
+        }
+        select{
+            padding:5px;
+        }
+        .cards{
+            display:grid;
+            grid-template-columns: repeat(3,350px);
+            grid-template-rows: repeat(9,550px);
+            grid-gap:20px;
+            margin-left:80px;
+        }
+        .cards-1{
+            border:1px solid black; 
+            border:1px solid rgb(226, 226, 226);
+            background-color: white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .cards-img>img{
+            
+          margin-left:100px;
+          
+        }
+        .cards-p{
+            text-align:center;
+            font-weight:600;
+        }
+        /* .dropdown{
+            display: none;
+            position: absolute;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+            background-color: white;
+        }
+        #men-div:hover .dropdown {
+            display: block;
+        }
+        #men-drop{
+            height:200px;
+            width:150px; 
+            z-index:1;
+        }
+        #clothes-div:hover .dropdown {
+            display: block;
+            left:140px;
+            color:black;
+        }
+        #clothes-drop{
+            height:200px;
+            width:150px; 
+            z-index:-1;
+        }
+        #clothes-div{
+            display:flex;
+           
+        }
+        #footwear-div:hover .dropdown {
+            display: block;
+            left:140px;
+
+        }
+        #footwear-drop{
+            height:200px;
+            width:150px; 
+            z-index:-1;
+        }
+        #color{
+            color:"white"
+        } */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+           
+          }
+          
+          ul li {
+            display: block;
+            position: relative;
+            float: left;
+            color:black;
+        }
+        
+        
+        
+        li ul { display: none; }
+        
+        ul li a {
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            white-space: nowrap;
+           color:black;
+          }
+          
+          ul li a:hover { background: #2c3e50; }
+          
+          
+          
+          li:hover > ul {
+            display: block;
+            position: absolute;
+          }
+          
+          li:hover li { float: none; }
+          
+          li:hover a { background: #ebabe5; }
+          
+          li:hover li a:hover { background: #535455; color:white }
+          
+          .main-navigation li ul li { border-top: 0; }
+          
+            ul ul ul {
+            left: 100%;
+            top: 0;
+          }
+          
+          
+          
+          ul:before,
+          ul:after {
+            content: " "; 
+            display: table; 
+          }
+          
+          ul:after { clear: both; }
+
+          .dropdown{
+            margin-left:530px;
+          }
